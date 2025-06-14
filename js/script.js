@@ -1,8 +1,20 @@
-const myLibrary = [new Book("Test 1", "Test Author", 69)];
+const myLibrary = [new Book("The Silent Patient", "Alex", 259)];
 const container = document.querySelector(".container");
 const openBtn = document.querySelector("#open-btn");
 const closeBtn = document.querySelector("#close-btn");
 const modal = document.querySelector("#modal");
+const form = document.getElementById("form");
+
+displayBooks();
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  addBookToLibrary(document.querySelector("#bookName").value,
+   document.querySelector("#bookAuthor").value,
+   document.querySelector("#bookPages").value);
+  displayBooks();
+  modal.close();
+});
 
 openBtn.addEventListener("click", () =>{
   modal.showModal();
@@ -18,7 +30,7 @@ function Book(name, author, pages) {
   this.author = author;
   this.pages = pages;
 }
-displayBooks();
+
 Book.prototype["info"] = function(){
     return `${this.name} by ${this.author}, ${pages} pages long`;
 };
