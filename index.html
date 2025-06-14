@@ -9,14 +9,29 @@
   <body>
     <div class="form-btn">
       <button id="open-btn">Add Book</button>
-      <dialog id="modal">
-        <form action="">
-          <input type="text" />
-        </form>
-        <button id="close-btn">Close Form</button>
-      </dialog>
     </div>
+    <dialog id="modal">
+      <form action="#" method="post" id="form">
+        <legend id="form-legend">Add Book</legend>
+        <div class="bookField">
+          <label for="bookName">Book Name</label>
+          <input type="text" id="bookName" name="bookName" required />
+        </div>
 
+        <div class="bookField">
+          <label for="bookAuthor">Author Name</label>
+          <input type="text" id="bookAuthor" name="bookAuthor" required />
+        </div>
+
+        <div class="bookField">
+          <label for="bookPages">No of Pages</label>
+          <input type="number" id="bookPages" name="bookPages" required />
+        </div>
+
+        <input type="submit" value="SUBMIT FORM" id="submit-btn" />
+      </form>
+      <button id="close-btn">CANCEL</button>
+    </dialog>
     <div class="container"></div>
     <script src="js/script.js"></script>
   </body>
